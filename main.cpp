@@ -1,30 +1,29 @@
-#include <iostream>
-#include <cmath>
-#include <string>
-using namespace std;
+#include <iostream> //подключение библиотеки iostream
+#include <cmath> //подключение библиотеки математики
+using namespace std; //глобальное подключение std
 
-int func(int m)
+int func(int m)//функция определения периода
 {
-    if (m < 2)
-        return 0;
+    if (m < 2)//если м<2
+        return 0;//функция вернет 0
 
-    int x[2] = {1, 1}, cicle = 0;
+    int x[2] = {1, 1}, cicle = 0;//инициализация переменных типа int
 
-    do
+    do//начало цикла
     {
-        x[cicle % 2] = (x[0] + x[1]) % m;
-        cicle++;
-    } while (x[0] != 1 || x[1] != 1);
+        x[cicle % 2] = (x[0] + x[1]) % m;//вычисления
+        cicle++;//инкремент
+    } while (x[0] != 1 || x[1] != 1);//условие цикла
 
-    return cicle;
+    return cicle;//возврат данных
 }
 
-int main()
+int main()//главная функция входа
 {
-    int m;
-    int input;
-    cout << "enter number m" << endl;
-    cin >> input;
-    m = func(input);
-    cout << "Periud raven " << m;
+    int m;//инициализация переменных типа int
+    int input;//инициализация переменных типа int
+    cout << "enter number m" << endl;//вывод в консоль
+    cin >> input;//ввод в консоль
+    m = func(input);//вызов функции вычисления
+    cout << "Periud raven " << m;//вывод результата в консоль
 }
